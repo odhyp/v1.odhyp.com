@@ -7,17 +7,14 @@ lastmod = 2025-08-02T23:55:06+07:00
 
 ## Work
 
-I'm still working my 9–5 as an accountant in Yogyakarta, Indonesia. Most of my days involve spreadsheets, ledgers, and financial reports.
-
-Outside of that, I'm continuing to build [SIPD-RI Helper](https://github.com/odhyp/sipd-ri), a tool to automate repetitive tasks on the [SIPD-RI](https://sipd.kemendagri.go.id/) web application. I'm also working on an internal app to help consolidate financial reports across the regional governments of Special Region of Yogyakarta.
+I'm still working my 9–5 as an accountant in Yogyakarta, Indonesia. Most of my days involve spreadsheets and financial reports. In addition to my daily work,, I'm building [SIPD-RI Helper](https://github.com/odhyp/sipd-ri), a tool to automate repetitive tasks on the [SIPD-RI](https://sipd.kemendagri.go.id/) web application. I'm also developing an internal application to help consolidate financial reports across the regional governments of Special Region of Yogyakarta.
 
 ## Tech
 
 Lately, I've been experimenting with:
 
+- **Astro** - moving away from [Hugo](https://gohugo.io/)
 - **Python** - mostly for building automation tools and utilities
-- **Hugo** - for powering this site, with a custom theme I maintain myself
-- **TailwindCSS** - keeping things clean and minimal on the front-end
 - **Streamlit** - building lightweight internal dashboards
 - **Flask** - building simple, useful websites
 
@@ -25,10 +22,11 @@ Lately, I've been experimenting with:
 
 I don’t read as much as I’d like, but I keep a few articles bookmarked for when I need a break from screens or spreadsheets. Most are about simplicity, habits, or creative workflows.
 
+- [Moving away from Google services, 8 years in](https://maximevaillancourt.com/blog/moving-away-from-google-services-8-years-in) by Maxime Vaillancourt
+- [I Deleted My Second Brain](https://www.joanwestenberg.com/p/i-deleted-my-second-brain) by Joan Westenberg
 - [Full-Bleed Layout Using CSS Grid](https://www.joshwcomeau.com/css/full-bleed/) by Josh W. Comeau
 - [Tools for Thought as Cultural Practices, not Computational Objects](https://maggieappleton.com/tools-for-thought) by Maggie Appleton
 - [Faster Horses](https://mxb.dev/blog/faster-horses/) by Max Böck
-- [8 Lesser-Known AI Projects to Improve Your Developer Productivity ⚡️🔥](https://dev.to/madza/8-lesser-known-ai-projects-to-improve-your-developer-productivity-4bjb) by Madza
 
 ## Music
 
@@ -54,7 +52,6 @@ These are the albums I listen to the most:
 Most of the time, it's about minimalism, though I usually prefer watching it on YouTube. Sometimes in life, you’re stuck waiting in a long queue or for the train to arrive. I’d rather listen to this than fall into doomscrolling, honestly.
 
 {{< wrapper class="flex flex-col gap-y-4 w-full items-center sm:justify-between sm:flex-row sm:gap-x-4" >}}
-
 <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/show/6vesMIAKe4rv2MpvTvkWPg/video?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/show/41Av6Rq81LfOT3Volz7W9D?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 {{< /wrapper >}}
