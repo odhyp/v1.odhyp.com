@@ -4,7 +4,7 @@ title = "Wedding Invitation"
 description = "A simple and elegant wedding invitation website" 
 slug = "wedding-invitation"
 date = 2025-08-03T10:51:24+07:00
-lastmod = 2025-08-03T10:51:24+07:00
+lastmod = 2025-08-03T20:15:00+07:00
 draft = false
 
 # Page setting

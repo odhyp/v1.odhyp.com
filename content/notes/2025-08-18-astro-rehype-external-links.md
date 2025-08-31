@@ -37,19 +37,19 @@ Import `rehype-external-links` and you can set your own `target` or `rel`.
 import rehypeExternalLinks from "rehype-external-links";
 
 export default defineConfig({
-  ...
-  markdown: {
-    rehypePlugins: [
-      [
-        rehypeExternalLinks,
-        {
-          target: "_blank",
-          rel: ["noopener", "noreferrer", "external"],
-        },
-      ],
-    ],
-  },
-  ...
+...
+markdown: {
+rehypePlugins: [
+[
+rehypeExternalLinks,
+{
+target: "\_blank",
+rel: ["noopener", "noreferrer", "external"],
+},
+],
+],
+},
+...
 });
 
 {{< /highlight >}}
@@ -59,5 +59,10 @@ export default defineConfig({
 The `target` and `rel` will be added to every external anchor tag after `npm run build` (or `npm run dev`).
 
 ```html
-<a href="https://github.com/odhyp/" rel="noopener noreferrer external" target="_blank">GitHub</a>
+<a
+  href="https://github.com/odhyp/"
+  rel="noopener noreferrer external"
+  target="_blank"
+  >GitHub</a
+>
 ```

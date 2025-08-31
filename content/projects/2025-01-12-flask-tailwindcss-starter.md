@@ -4,7 +4,7 @@ title = "Flask TailwindCSS Starter"
 description = "Starter project for Flask and TailwindCSS v4, ready to deploy in Vercel" 
 slug = "flask-tailwindcss-starter"
 date = 2025-01-12
-lastmod = 2025-08-03T09:17:37+07:00
+lastmod = 2025-08-06T10:57:11+07:00
 draft = false
 
 # Page setting

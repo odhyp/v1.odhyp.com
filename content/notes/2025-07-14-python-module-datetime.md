@@ -4,7 +4,7 @@ title = "Python Module: Datetime"
 description = "Cheatsheet for handling date and time in Python" 
 slug = "python-module-datetime"
 date = 2025-07-14T21:27:03+07:00
-lastmod = 2025-07-28T14:54:27+07:00
+lastmod = 2025-08-05T07:41:40+07:00
 draft = false
 
 # Page setting

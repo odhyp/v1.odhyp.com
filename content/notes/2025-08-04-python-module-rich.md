@@ -43,9 +43,9 @@ print(text)
 
 Common styles:
 
-* `bold`, `italic`, `underline`, `strike`, `dim`
-* Colors: `red`, `green`, `blue`, `yellow`, etc.
-* Background: `on red`, `on green`
+- `bold`, `italic`, `underline`, `strike`, `dim`
+- Colors: `red`, `green`, `blue`, `yellow`, etc.
+- Background: `on red`, `on green`
 
 ## Tables
 
@@ -131,11 +131,11 @@ with Live(table, refresh_per_second=4):
 
 ## Notes
 
-* Use `rich.print()` for styled output instead of `print()`.
-* Use `Console().print()` for advanced features (e.g. tables, layouts).
-* Rich automatically detects terminal width and color support.
+- Use `rich.print()` for styled output instead of `print()`.
+- Use `Console().print()` for advanced features (e.g. tables, layouts).
+- Rich automatically detects terminal width and color support.
 
 ## Links
 
-* 📚 [Documentation](https://rich.readthedocs.io/)
-* 🧑‍💻 [GitHub Repo](https://github.com/Textualize/rich)
+- 📚 [Documentation](https://rich.readthedocs.io/)
+- 🧑‍💻 [GitHub Repo](https://github.com/Textualize/rich)

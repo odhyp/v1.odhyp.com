@@ -4,7 +4,7 @@ title = "Site Updates"
 description = "A simple record of the ongoing tweaks and changes I’m making to this site."
 slug = "site-updates"
 date = 2025-02-11T19:45:32+07:00
-lastmod = 2025-07-28T14:54:10+07:00
+lastmod = 2025-08-05T07:39:43+07:00
 draft = true
 
 # Page setting
