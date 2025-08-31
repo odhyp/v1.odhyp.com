@@ -4,8 +4,6 @@ title = "About"
 
 I'm Odhy Pradhana, an accountant and Python developer based in Yogyakarta, Indonesia.
 
-{{< img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?q=80&w=1196&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="That's me" caption="" class="shadow-lg max-h-32 w-full object-cover sm:max-h-44 md:max-h-56 lg:max-h-72" >}}
-
 I work full-time as an accountant, but I spend much of my free time building with Python. What started as a hobby turned into a way to automate repetitive tasks, explore ideas, and build useful tools.
 
 I focus on creating helper scripts, streamlining workflows, and developing simple websites with a clear purpose. I enjoy building things that are straightforward, easy to use, and well-documented, both for others and for myself.
@@ -21,7 +19,7 @@ There’s no schedule. I write when something clicks or when I need to remember 
 
 ## Away From the Screen
 
-When I'm not writing code or writing about writing code, I enjoy quiet walks in nature, visiting beaches, and spending time with my wife and two cats. I often play [Radiohead](https://www.youtube.com/watch?v=DTZt6Dzkq6w) songs on guitar and piano, and most of their lyrics are stuck in my head.
+I enjoy quiet walks in nature, visiting beaches, and spending time with my wife and two cats. I also play guitar and piano.
 
 ## Elsewhere
 
