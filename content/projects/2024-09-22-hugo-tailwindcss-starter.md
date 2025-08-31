@@ -11,7 +11,7 @@ draft = false
 toc = false
 featured = false
 project_type = "other" # main or other
-cover = "https://placehold.co/1200x675"
+cover = "https://kinsta.com/wp-content/uploads/2021/10/hugo.png"
 
 # Taxonomies & Routing
 tech_stacks = ["hugo", "tailwindcss", "vercel", "GitHub Pages", "Netlify"]
