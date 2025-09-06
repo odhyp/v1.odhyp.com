@@ -4,7 +4,7 @@ title = "Astro: Rehype External Links"
 description = "Integrate rehype plugin to add rel (and target) to external links in Astro" 
 slug = "astro-rehype-external-links"
 date = 2025-08-18T20:33:23+07:00
-lastmod = 2025-08-18T20:33:23+07:00
+lastmod = 2025-08-31T17:19:49+07:00
 draft = false
 
 # Page setting

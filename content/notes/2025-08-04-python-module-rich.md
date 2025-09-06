@@ -4,7 +4,7 @@ title = "Python Module: Rich"
 description = "Cheatsheet for formatting text, tables, and layouts using the Rich Python module"
 slug = "python-module-rich"
 date = 2025-08-04T08:54:04+07:00
-lastmod = 2025-08-04T08:54:04+07:00
+lastmod = 2025-08-31T17:19:49+07:00
 draft = false
 
 # Page setting

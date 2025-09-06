@@ -2,7 +2,7 @@
 title = "Now"
 description = "What I’m currently building, exploring, and thinking about."
 toc = false
-lastmod = 2025-08-31T17:14:36+07:00
+lastmod = 2025-09-06T18:05:31+07:00
 +++
 
 ## Work
