@@ -7,23 +7,24 @@ lastmod = 2025-08-31T17:14:36+07:00
 
 ## Work
 
-I'm still working my 9–5 as an accountant in Yogyakarta, Indonesia. Most of my days involve spreadsheets and financial reports. In addition to my daily work,, I'm building [SIPD-RI Helper](https://github.com/odhyp/sipd-ri), a tool to automate repetitive tasks on the [SIPD-RI](https://sipd.kemendagri.go.id/) web application. I'm also developing an internal application to help consolidate financial reports across the regional governments of Special Region of Yogyakarta.
+I'm working my 9-to-5 as an accountant in Yogyakarta, Indonesia. Most of my days involve spreadsheets and financial reports. Outside of that, I'm continuing to build [SIPD-RI Helper](https://github.com/odhyp/sipd-ri), a tool to automate repetitive tasks on the [SIPD-RI](https://sipd.kemendagri.go.id/) web application.
 
 ## Tech
 
 Lately, I've been experimenting with:
 
 - **Astro** - moving away from [Hugo](https://gohugo.io/)
-- **Python** - mostly for building automation tools and utilities
 - **Streamlit** - building lightweight internal dashboards
 - **Flask** - building simple, useful websites
 
 ## Reading
 
-I don’t read as much as I’d like, but I keep a few articles bookmarked for when I need a break from screens or spreadsheets. Most are about simplicity, habits, or creative workflows.
+I don't read as much as I'd like, but I keep a few articles bookmarked.
 
 - [Moving away from Google services, 8 years in](https://maximevaillancourt.com/blog/moving-away-from-google-services-8-years-in) by Maxime Vaillancourt
 - [I Deleted My Second Brain](https://www.joanwestenberg.com/p/i-deleted-my-second-brain) by Joan Westenberg
+- [The Interfaces With Which We Think](https://alexanderobenauer.com/think/) by Alexander Obenauer
+- [Renaissance](https://avanier.dev/renaissance) by Josh
 - [Full-Bleed Layout Using CSS Grid](https://www.joshwcomeau.com/css/full-bleed/) by Josh W. Comeau
 - [Tools for Thought as Cultural Practices, not Computational Objects](https://maggieappleton.com/tools-for-thought) by Maggie Appleton
 - [Faster Horses](https://mxb.dev/blog/faster-horses/) by Max Böck
