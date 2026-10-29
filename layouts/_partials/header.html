@@ -1,0 +1,17 @@
+<header>
+  <a href="{{ site.Home.RelPermalink }}">{{ site.Title }}</a>
+  <nav>
+    <ul>
+      {{ range site.Menus.main }}
+        <li>
+          <a
+            href="{{ .URL }}"
+            {{ if $.IsMenuCurrent .Menu . }}aria-current="page"{{ end }}
+          >
+            {{ .Name }}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </nav>
+</header>

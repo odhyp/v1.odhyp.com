@@ -1,3 +1,34 @@
-baseURL = 'https://example.org/'
-locale = 'en-us'
-title = 'My New Hugo Project'
+baseURL = "https://odhyp.com/"
+locale = "en-us"
+title = "Odhy Pradhana"
+
+[params]
+description = ""
+
+[params.author]
+name = "Odhy Pradhana"
+
+# url is the fallback until the pageRef page exists
+[[menus.main]]
+name = "Writings"
+pageRef = "/writings"
+url = "/writings/"
+weight = 10
+
+[[menus.main]]
+name = "Projects"
+pageRef = "/projects"
+url = "/projects/"
+weight = 20
+
+[[menus.main]]
+name = "Now"
+pageRef = "/now"
+url = "/now/"
+weight = 30
+
+[[menus.main]]
+name = "About"
+pageRef = "/about"
+url = "/about/"
+weight = 40
