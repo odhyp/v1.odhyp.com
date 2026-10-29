@@ -1,6 +1,19 @@
 baseURL = "https://odhyp.com/"
 locale = "en-us"
 title = "Odhy Pradhana"
+enableGitInfo = true
+enableRobotsTXT = true
+
+# A hand-set lastmod beats Git
+[frontmatter]
+lastmod = ["lastmod", ":git", ":default"]
+
+# RSS only from home (Writings only, see layouts/home.rss.xml); sitemap is always on
+[outputs]
+home = ["html", "rss"]
+section = ["html"]
+taxonomy = ["html"]
+term = ["html"]
 
 # Per Hugo's Cloudflare guide; HUGO_CACHEDIR is set in build.sh
 [caches.images]

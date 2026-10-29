@@ -1,5 +1,11 @@
 import { execFileSync } from "node:child_process";
-import { mkdtempSync, readFileSync, readdirSync, rmSync } from "node:fs";
+import {
+  existsSync,
+  mkdtempSync,
+  readFileSync,
+  readdirSync,
+  rmSync,
+} from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { after, before, test } from "node:test";
@@ -24,13 +30,18 @@ before(() => {
   );
   pages = readdirSync(out, { recursive: true })
     .filter((f) => f.endsWith(".html"))
-    .map((f) => ({ path: f, html: readFileSync(join(out, f), "utf8") }));
+    .map((f) => ({
+      path: f.replaceAll("\\", "/"),
+      html: readFileSync(join(out, f), "utf8"),
+    }));
   assert.ok(pages.length > 0, "build produced no HTML pages");
 });
 
 after(() => rmSync(out, { recursive: true, force: true }));
 
-const home = () => pages.find((p) => p.path === "index.html").html;
+const page = (path) => pages.find((p) => p.path === path)?.html;
+const home = () => page("index.html");
+const read = (f) => readFileSync(join(out, f), "utf8");
 
 test("header nav is exactly Writings, Projects, Now, About", () => {
   for (const { path, html } of pages) {
@@ -80,4 +91,89 @@ test("pages carry OpenGraph meta", () => {
     assert.match(html, /<meta property="?og:title"?/, path);
     assert.match(html, /<meta property="?og:url"?/, path);
   }
+});
+
+test("writings list groups by year, newest first, on one page", () => {
+  const html = page("writings/index.html");
+  const years = [...html.matchAll(/<h2[^>]*>(\d{4})<\/h2>/g)].map((m) => m[1]);
+  assert.deepEqual(years, ["2026", "2025"]);
+  const titles = [
+    ...html.matchAll(/<a href="?\/writings\/[^"> ]+"?>([^<]+)</g),
+  ].map((m) => m[1]);
+  assert.deepEqual(titles, [
+    "Zeta",
+    "Epsilon",
+    "Delta",
+    "Gamma",
+    "Beta",
+    "Alpha",
+  ]);
+  assert.match(html, /<time datetime="?2025-03-10"?>Mar 10, 2025<\/time>/);
+  assert.ok(!pages.some((p) => p.path.startsWith("writings/page/")));
+});
+
+test("Updated shows only when lastmod falls on a different day", () => {
+  assert.match(
+    page("writings/delta/index.html"),
+    /Updated <time datetime="?2026-05-01"?>May 1, 2026<\/time>/,
+  );
+  assert.doesNotMatch(page("writings/gamma/index.html"), /Updated/);
+});
+
+test("a Writing shows its title and date", () => {
+  const html = page("writings/alpha/index.html");
+  assert.match(html, /<h1>Alpha<\/h1>/);
+  assert.match(html, /<time datetime="?2025-03-10"?>Mar 10, 2025<\/time>/);
+});
+
+test("home lists the 5 latest Writings and links to all", () => {
+  const main = home().match(/<main>([\s\S]*?)<\/main>/)[1];
+  const titles = [
+    ...main.matchAll(/<a href="?\/writings\/[^"> ]+"?>([^<]+)</g),
+  ].map((m) => m[1]);
+  assert.deepEqual(titles, ["Zeta", "Epsilon", "Delta", "Gamma", "Beta"]);
+  assert.match(main, /<a href="?\/writings\/"?>All writings<\/a>/);
+});
+
+test("RSS feed contains only Writings", () => {
+  const items = [...read("index.xml").matchAll(/<link>([^<]+)<\/link>/g)]
+    .map((m) => m[1])
+    .slice(1);
+  assert.deepEqual(
+    items,
+    ["zeta", "epsilon", "delta", "gamma", "beta", "alpha"].map(
+      (s) => `https://odhyp.com/writings/${s}/`,
+    ),
+  );
+});
+
+test("drafts and future Writings are absent from output", () => {
+  for (const slug of ["draft", "future"])
+    assert.ok(!existsSync(join(out, "writings", slug)), slug);
+  for (const f of [
+    "index.xml",
+    "sitemap.xml",
+    "writings/index.html",
+    "index.html",
+  ])
+    assert.doesNotMatch(
+      read(f),
+      /Draft Writing|Future Writing|\/(draft|future)\//,
+      f,
+    );
+});
+
+test("sitemap and robots.txt exist; no JSON output", () => {
+  assert.match(
+    read("sitemap.xml"),
+    /<loc>https:\/\/odhyp\.com\/writings\/alpha\/<\/loc>/,
+  );
+  assert.match(read("robots.txt"), /User-agent: \*/);
+  assert.ok(
+    !readdirSync(out, { recursive: true }).some((f) => f.endsWith(".json")),
+  );
+});
+
+test("an undated page shows no date", () => {
+  assert.doesNotMatch(page("about/index.html"), /0001/);
 });

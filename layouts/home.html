@@ -1,3 +1,14 @@
 {{ define "main" }}
   {{ .Content }}
+  {{ with site.GetPage "/writings" }}
+    <ul>
+      {{ range first 5 .RegularPages }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          {{ partial "date.html" .Date }}
+        </li>
+      {{ end }}
+    </ul>
+    <a href="{{ .RelPermalink }}">All writings</a>
+  {{ end }}
 {{ end }}
