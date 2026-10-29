@@ -3,6 +3,7 @@
     <h1>{{ .Title }}</h1>
     {{ if not .Date.IsZero }}<p>{{ partial "date.html" .Date }}</p>{{ end }}
     {{ partial "updated.html" . }}
+    {{ partial "topics.html" . }}
     {{ .Content }}
   </article>
 {{ end }}

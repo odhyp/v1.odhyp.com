@@ -19,6 +19,10 @@ term = ["html"]
 [caches.images]
 dir = ":cacheDir/images"
 
+# Topics is the only taxonomy; defining it drops Hugo's default tags and categories
+[taxonomies]
+topic = "topics"
+
 [params]
 description = ""
 

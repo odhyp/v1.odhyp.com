@@ -1,5 +1,6 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
+  <a href="{{ relref . "/topics" }}">Topics</a>
   {{ range .Pages.GroupByDate "2006" }}
     <section>
       <h2>{{ .Key }}</h2>
@@ -8,6 +9,7 @@
           <li>
             <a href="{{ .RelPermalink }}">{{ .Title }}</a>
             {{ partial "date.html" .Date }}
+            {{ partial "topics.html" . }}
           </li>
         {{ end }}
       </ul>

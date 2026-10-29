@@ -41,6 +41,7 @@ after(() => rmSync(out, { recursive: true, force: true }));
 
 const page = (path) => pages.find((p) => p.path === path)?.html;
 const home = () => page("index.html");
+const main = (path) => page(path).match(/<main>([\s\S]*?)<\/main>/)[1];
 const read = (f) => readFileSync(join(out, f), "utf8");
 
 test("header nav is exactly Writings, Projects, Now, About", () => {
@@ -127,12 +128,12 @@ test("a Writing shows its title and date", () => {
 });
 
 test("home lists the 5 latest Writings and links to all", () => {
-  const main = home().match(/<main>([\s\S]*?)<\/main>/)[1];
+  const html = main("index.html");
   const titles = [
-    ...main.matchAll(/<a href="?\/writings\/[^"> ]+"?>([^<]+)</g),
+    ...html.matchAll(/<a href="?\/writings\/[^"> ]+"?>([^<]+)</g),
   ].map((m) => m[1]);
   assert.deepEqual(titles, ["Zeta", "Epsilon", "Delta", "Gamma", "Beta"]);
-  assert.match(main, /<a href="?\/writings\/"?>All writings<\/a>/);
+  assert.match(html, /<a href="?\/writings\/"?>All writings<\/a>/);
 });
 
 test("RSS feed contains only Writings", () => {
@@ -176,4 +177,52 @@ test("sitemap and robots.txt exist; no JSON output", () => {
 
 test("an undated page shows no date", () => {
   assert.doesNotMatch(page("about/index.html"), /0001/);
+});
+
+test("Topics page lists every Topic with its Writing count", () => {
+  const topics = [
+    ...main("topics/index.html").matchAll(
+      /<a href="?\/topics\/([^"> /]+)\/"?>[^<]+<\/a>\s*\((\d+)\)/g,
+    ),
+  ].map((m) => [m[1], Number(m[2])]);
+  assert.deepEqual(topics, [
+    ["hugo", 3],
+    ["go", 2],
+    ["web", 1],
+  ]);
+});
+
+test("a Topic page lists that Topic's Writings", () => {
+  const titles = (path) =>
+    [...main(path).matchAll(/<a href="?\/writings\/[^"> ]+"?>([^<]+)</g)].map(
+      (m) => m[1],
+    );
+  assert.deepEqual(titles("topics/hugo/index.html"), [
+    "Gamma",
+    "Beta",
+    "Alpha",
+  ]);
+  assert.deepEqual(titles("topics/go/index.html"), ["Gamma", "Alpha"]);
+  assert.deepEqual(titles("topics/web/index.html"), ["Alpha"]);
+});
+
+test("Writings link their Topics on the single view and the list", () => {
+  const links =
+    /<a href="?\/topics\/hugo\/"?>Hugo<\/a>[\s\S]*<a href="?\/topics\/go\/"?>Go<\/a>[\s\S]*<a href="?\/topics\/web\/"?>Web<\/a>/;
+  assert.match(page("writings/alpha/index.html"), links);
+  const list = page("writings/index.html");
+  const alpha = list.slice(list.lastIndexOf("<li>", list.indexOf(">Alpha<")));
+  assert.match(alpha, links);
+});
+
+test("Writings page links to Topics at the top", () => {
+  const html = main("writings/index.html");
+  const topics = html.search(/<a href="?\/topics\/"?>Topics<\/a>/);
+  assert.ok(topics >= 0, "no Topics link");
+  assert.ok(topics < html.search(/<h2/), "Topics link is not above the list");
+});
+
+test("only the topics taxonomy exists", () => {
+  for (const dir of ["tags", "categories"])
+    assert.ok(!existsSync(join(out, dir)), dir);
 });
