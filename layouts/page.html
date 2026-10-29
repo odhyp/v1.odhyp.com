@@ -1,5 +1,5 @@
 {{ define "main" }}
-  <article>
+  <article {{ if eq .Section "writings" }}data-pagefind-body{{ end }}>
     <h1>{{ .Title }}</h1>
     {{ if not .Date.IsZero }}<p>{{ partial "date.html" .Date }}</p>{{ end }}
     {{ partial "updated.html" . }}

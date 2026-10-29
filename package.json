@@ -4,7 +4,8 @@
   "packageManager": "pnpm@12.16.1",
   "scripts": {
     "dev": "hugo server --buildDrafts --buildFuture",
-    "build": "hugo --gc --minify",
+    "build": "hugo --gc --minify && pagefind --site public",
+    "preview": "hugo --gc --minify && pagefind --site public --serve",
     "new": "hugo new content",
     "format": "prettier --write assets content layouts test hugo.toml package.json .prettierrc",
     "format:check": "prettier --check assets content layouts test hugo.toml package.json .prettierrc",
@@ -13,6 +14,7 @@
   "devDependencies": {
     "@htnabe/prettier-plugin-go-template": "^0.0.6",
     "@htnabe/prettier-plugin-hugo-post": "^0.0.2",
+    "pagefind": "1.5.2",
     "prettier": "^3.9.10",
     "prettier-plugin-toml": "^4.1.0"
   }

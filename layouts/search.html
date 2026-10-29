@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  <form role="search">
+    <label for="q">Search Writings</label>
+    <input id="q" name="q" type="search" autocomplete="off" />
+  </form>
+  <ul id="results"></ul>
+  {{ with resources.Get "js/search.js" | minify | fingerprint }}
+    <script
+      type="module"
+      src="{{ .RelPermalink }}"
+      integrity="{{ .Data.Integrity }}"
+      crossorigin="anonymous"
+    ></script>
+  {{ end }}
+{{ end }}

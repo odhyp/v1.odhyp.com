@@ -1,6 +1,7 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
   <a href="{{ relref . "/topics" }}">Topics</a>
+  <a href="{{ relref . "/search" }}">Search</a>
   {{ range .Pages.GroupByDate "2006" }}
     <section>
       <h2>{{ .Key }}</h2>

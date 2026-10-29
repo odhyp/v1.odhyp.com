@@ -65,9 +65,28 @@ test("each page has exactly one fingerprinted stylesheet with integrity", () => 
   }
 });
 
-test("no page has a script tag", () => {
+test("only the Search page has a script tag", () => {
   for (const { path, html } of pages)
-    assert.doesNotMatch(html, /<script/i, path);
+    if (path === "search/index.html")
+      assert.match(
+        html,
+        /<script [^>]*src="?\/js\/search\.min\.[0-9a-f]{64}\.js"?/,
+      );
+    else assert.doesNotMatch(html, /<script/i, path);
+});
+
+test("only Writing pages carry the Pagefind body attribute", () => {
+  for (const { path, html } of pages)
+    if (/^writings\/[^/]+\/index\.html$/.test(path))
+      assert.match(html, /data-pagefind-body/, path);
+    else assert.doesNotMatch(html, /data-pagefind-body/, path);
+});
+
+test("Search page has a search input and an empty results list", () => {
+  const html = main("search/index.html");
+  assert.match(html, /<h1>Search<\/h1>/);
+  assert.match(html, /<input [^>]*type="?search"?/);
+  assert.match(html, /<ul id="?results"?/);
 });
 
 test("footer has copyright range, GitHub, RSS and back-to-top links", () => {
@@ -217,11 +236,16 @@ test("Writings link their Topics on the single view and the list", () => {
   assert.match(alpha, links);
 });
 
-test("Writings page links to Topics at the top", () => {
+test("Writings page links to Topics and Search at the top", () => {
   const html = main("writings/index.html");
-  const topics = html.search(/<a href="?\/topics\/"?>Topics<\/a>/);
-  assert.ok(topics >= 0, "no Topics link");
-  assert.ok(topics < html.search(/<h2/), "Topics link is not above the list");
+  for (const [name, href] of [
+    ["Topics", "topics"],
+    ["Search", "search"],
+  ]) {
+    const at = html.search(new RegExp(`<a href="?/${href}/"?>${name}</a>`));
+    assert.ok(at >= 0, `no ${name} link`);
+    assert.ok(at < html.search(/<h2/), `${name} link is not above the list`);
+  }
 });
 
 test("only the topics taxonomy exists", () => {
