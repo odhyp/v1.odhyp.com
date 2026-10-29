@@ -4,6 +4,7 @@
     {{ if not .Date.IsZero }}<p>{{ partial "date.html" .Date }}</p>{{ end }}
     {{ partial "updated.html" . }}
     {{ partial "topics.html" . }}
+    {{ if .Params.toc }}{{ .TableOfContents }}{{ end }}
     {{ .Content }}
   </article>
 {{ end }}

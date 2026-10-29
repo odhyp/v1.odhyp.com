@@ -1,4 +1,4 @@
-import { execFileSync } from "node:child_process";
+import { execFileSync, spawnSync } from "node:child_process";
 import {
   existsSync,
   mkdtempSync,
@@ -19,6 +19,8 @@ before(() => {
   execFileSync(
     "hugo",
     [
+      "--config",
+      "hugo.toml,test/fixtures/hugo.toml",
       "--contentDir",
       "test/fixtures/content",
       "--destination",
@@ -225,4 +227,74 @@ test("Writings page links to Topics at the top", () => {
 test("only the topics taxonomy exists", () => {
   for (const dir of ["tags", "categories"])
     assert.ok(!existsSync(join(out, dir)), dir);
+});
+
+test("headings have ids and self-link anchors", () => {
+  const html = page("writings/alpha/index.html");
+  assert.match(
+    html,
+    /<h2 id="?first-section"?>First Section\s*<a [^>]*href="?#first-section"?/,
+  );
+  assert.match(
+    html,
+    /<h3 id="?sub-section"?>Sub Section\s*<a [^>]*href="?#sub-section"?/,
+  );
+});
+
+test("the TOC is present only when enabled", () => {
+  const toc = /<nav id="?TableOfContents"?>/;
+  const alpha = page("writings/alpha/index.html");
+  assert.match(alpha, toc);
+  assert.match(alpha, /TableOfContents[\s\S]*href="?#sub-section"?/);
+  assert.doesNotMatch(page("writings/beta/index.html"), toc);
+});
+
+test("code is highlighted with classes, not inline styles", () => {
+  const pre = page("writings/alpha/index.html").match(/<pre[^>]*>/)[0];
+  assert.match(pre, /class="?chroma"?/);
+  assert.doesNotMatch(pre, /style=/);
+});
+
+test("Writing images are lazy WebP with width and height", () => {
+  const img = page("writings/alpha/index.html").match(/<img[^>]*>/)[0];
+  assert.match(img, /src="?\/images\/alpha\/pixel_[^" >]*\.webp"?/);
+  assert.match(img, /width="?3"?/);
+  assert.match(img, /height="?2"?/);
+  assert.match(img, /loading="?lazy"?/);
+  assert.match(img, /alt="?A pixel"?/);
+});
+
+test("a missing image fails the build", () => {
+  const dest = mkdtempSync(join(tmpdir(), "odhyp-missing-"));
+  try {
+    const run = spawnSync(
+      "hugo",
+      ["--contentDir", "test/fixtures/missing-image", "--destination", dest],
+      { encoding: "utf8" },
+    );
+    assert.notEqual(run.status, 0);
+    assert.match(run.stderr, /nope\.png/);
+  } finally {
+    rmSync(dest, { recursive: true, force: true });
+  }
+});
+
+test("Projects, Now and About render their content at root URLs", () => {
+  for (const name of ["Projects", "Now", "About"])
+    assert.match(
+      main(`${name.toLowerCase()}/index.html`),
+      new RegExp(`<h1>${name}</h1>[\\s\\S]*${name} body\\.`),
+      name,
+    );
+});
+
+test("Now shows when it was last updated", () => {
+  assert.match(
+    page("now/index.html"),
+    /Updated <time datetime="?2026-04-20"?>Apr 20, 2026<\/time>/,
+  );
+});
+
+test("404 page exists and links home", () => {
+  assert.match(main("404.html"), /<a href="?\/"?>/);
 });

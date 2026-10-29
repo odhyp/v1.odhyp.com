@@ -5,3 +5,5 @@ topics = ["hugo"]
 +++
 
 Beta body.
+
+## Beta Section

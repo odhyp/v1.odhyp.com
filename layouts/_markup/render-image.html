@@ -1,0 +1,17 @@
+{{- /* Page resource first, then assets/images/<slug>/ (slug falls back to file name) */ -}}
+{{- $path := (urls.Parse .Destination).Path -}}
+{{- $img := or (.PageInner.Resources.Get $path) (resources.Get (printf "images/%s/%s" (.PageInner.Slug | default .PageInner.File.ContentBaseName) $path)) -}}
+{{- with $img -}}
+  {{- with .Process "webp" -}}
+    <img
+      src="{{ .RelPermalink }}"
+      alt="{{ $.PlainText }}"
+      width="{{ .Width }}"
+      height="{{ .Height }}"
+      loading="lazy"
+      {{ with $.Title }}title="{{ . }}"{{ end }}
+    />
+  {{- end -}}
+{{- else -}}
+  {{- errorf "image %q not found for %s" .Destination .PageInner.File.Path -}}
+{{- end -}}

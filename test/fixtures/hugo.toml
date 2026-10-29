@@ -1,0 +1,8 @@
+# Test-only: adds fixture images to the site's assets
+[[module.mounts]]
+source = "assets"
+target = "assets"
+
+[[module.mounts]]
+source = "test/fixtures/assets"
+target = "assets"
