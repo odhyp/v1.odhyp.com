@@ -1,9 +1,0 @@
-# 1999
-# here i'm alive
-# everything all of the time
-
-User-agent: *
-Disallow: /drafts/
-Allow: /
-
-Sitemap: {{ .Site.BaseURL }}sitemap.xml

@@ -1,6 +1,0 @@
-# Ignore artifacts:
-build
-coverage
-
-# Prettier assumes `.json` as a "real JSON", not one with Hugo template
-layouts/index.json

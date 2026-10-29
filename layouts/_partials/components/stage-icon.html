@@ -1,9 +1,0 @@
-{{ with .Params.stage }}
-  {{ if eq . "sapling" }}
-    <i data-lucide="sprout" class="size-4"></i>
-  {{ else if eq . "growing" }}
-    <i data-lucide="shrub" class="size-4"></i>
-  {{ else if eq . "evergreen" }}
-    <i data-lucide="tree-pine" class="size-4"></i>
-  {{ end }}
-{{ end }}
