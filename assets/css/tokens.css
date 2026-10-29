@@ -1,1 +1,40 @@
-/* tokens */
+/* tokens: Radix sage and teal, sRGB, light-dark() pairs (ADR-0001) */
+:root {
+  color-scheme: light dark;
+
+  --sage-1: light-dark(#fbfdfc, #101211);
+  --sage-2: light-dark(#f7f9f8, #171918);
+  --sage-3: light-dark(#eef1f0, #202221);
+  --sage-4: light-dark(#e6e9e8, #272a29);
+  --sage-5: light-dark(#dfe2e0, #2e3130);
+  --sage-6: light-dark(#d7dad9, #373b39);
+  --sage-7: light-dark(#cbcfcd, #444947);
+  --sage-8: light-dark(#b8bcba, #5b625f);
+  --sage-9: light-dark(#868e8b, #63706b);
+  --sage-10: light-dark(#7c8481, #717d79);
+  --sage-11: light-dark(#5f6563, #adb5b2);
+  --sage-12: light-dark(#1a211e, #eceeed);
+
+  --teal-1: light-dark(#fafefd, #0d1514);
+  --teal-2: light-dark(#f3fbf9, #111c1b);
+  --teal-3: light-dark(#e0f8f3, #0d2d2a);
+  --teal-4: light-dark(#ccf3ea, #023b37);
+  --teal-5: light-dark(#b8eae0, #084843);
+  --teal-6: light-dark(#a1ded2, #145750);
+  --teal-7: light-dark(#83cdc1, #1c6961);
+  --teal-8: light-dark(#53b9ab, #207e73);
+  --teal-9: light-dark(#12a594, #12a594);
+  --teal-10: light-dark(#0d9b8a, #0eb39e);
+  --teal-11: light-dark(#008573, #0bd8b6);
+  --teal-12: light-dark(#0d3d38, #adf0dd);
+
+  --font-sans: system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+}

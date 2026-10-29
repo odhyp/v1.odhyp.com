@@ -1,13 +1,8 @@
 /* content */
-article img {
-  max-width: 100%;
-  height: auto;
-}
-
 #TableOfContents {
   margin-block: 1.5rem;
   padding-inline-start: 1rem;
-  border-inline-start: 2px solid currentColor;
+  border-inline-start: 2px solid var(--sage-6);
 }
 
 #TableOfContents ul {
@@ -15,9 +10,8 @@ article img {
 }
 
 article blockquote {
-  margin-inline: 0;
   padding-inline-start: 1rem;
-  border-inline-start: 2px solid currentColor;
+  border-inline-start: 2px solid var(--sage-6);
   font-style: italic;
 }
 

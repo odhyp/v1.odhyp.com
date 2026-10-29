@@ -1,1 +1,84 @@
 /* base */
+body {
+  max-width: calc(65ch + 2rem);
+  margin-inline: auto;
+  padding-inline: var(--space-3);
+}
+
+:focus-visible {
+  outline: 2px solid var(--teal-11);
+  outline-offset: 2px;
+}
+
+body > header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-3);
+  padding-block: var(--space-4);
+}
+
+body > header > a {
+  font-weight: 600;
+  color: var(--sage-12);
+  text-decoration: none;
+}
+
+nav ul,
+footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li + li,
+footer li + li {
+  margin: 0;
+}
+
+nav a {
+  color: var(--sage-11);
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+  color: var(--teal-11);
+}
+
+main {
+  padding-block-end: var(--space-6);
+}
+
+body > footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-3);
+  padding-block: var(--space-4);
+  border-block-start: 1px solid var(--sage-6);
+  font-size: 0.875rem;
+  color: var(--sage-11);
+}
+
+form[role="search"] {
+  display: grid;
+  gap: var(--space-1);
+}
+
+input[type="search"] {
+  padding: var(--space-2);
+  border: 1px solid var(--sage-7);
+  border-radius: 4px;
+  color: inherit;
+  background: var(--sage-2);
+}
+
+#results {
+  padding: 0;
+  list-style: none;
+}

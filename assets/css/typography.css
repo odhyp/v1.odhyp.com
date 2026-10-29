@@ -1,1 +1,83 @@
 /* typography */
+body {
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--sage-12);
+  background: var(--sage-1);
+  -webkit-text-size-adjust: 100%;
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
+h2 {
+  font-size: 1.375rem;
+}
+
+h3 {
+  font-size: 1.125rem;
+}
+
+/* flow spacing between block siblings; Hugo wraps code blocks in a div */
+:is(main, article, section) > * + * {
+  margin-block-start: var(--space-3);
+}
+
+* + h2,
+* + h3 {
+  margin-block-start: var(--space-5);
+}
+
+ul,
+ol {
+  padding-inline-start: var(--space-4);
+}
+
+li + li {
+  margin-block-start: var(--space-1);
+}
+
+a {
+  color: var(--teal-11);
+  text-underline-offset: 0.15em;
+}
+
+a:hover {
+  color: var(--teal-12);
+}
+
+code,
+kbd,
+pre {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+:not(pre) > code {
+  padding: 0.1em 0.3em;
+  border-radius: 4px;
+  background: var(--sage-3);
+}
+
+time,
+small {
+  color: var(--sage-11);
+}
+
+hr {
+  border: 0;
+  border-block-start: 1px solid var(--sage-6);
+}
