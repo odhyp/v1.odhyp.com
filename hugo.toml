@@ -2,6 +2,10 @@ baseURL = "https://odhyp.com/"
 locale = "en-us"
 title = "Odhy Pradhana"
 
+# Per Hugo's Cloudflare guide; HUGO_CACHEDIR is set in build.sh
+[caches.images]
+dir = ":cacheDir/images"
+
 [params]
 description = ""
 
