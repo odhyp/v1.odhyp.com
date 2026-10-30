@@ -2,7 +2,8 @@
 {{- $path := (urls.Parse .Destination).Path -}}
 {{- $img := or (.PageInner.Resources.Get $path) (resources.Get (printf "images/%s/%s" (.PageInner.Slug | default .PageInner.File.ContentBaseName) $path)) -}}
 {{- with $img -}}
-  {{- with .Process "webp" -}}
+  {{- /* fit only downscales: 2x the ~65ch column, and keeps the WebP encoder within memory */ -}}
+  {{- with .Process "fit 1400x1400 webp" -}}
     <img
       src="{{ .RelPermalink }}"
       alt="{{ $.PlainText }}"
