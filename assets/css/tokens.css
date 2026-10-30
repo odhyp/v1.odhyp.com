@@ -1,39 +1,40 @@
-/* tokens: Radix olive and grass, sRGB, light-dark() pairs (ADR-0001) */
 :root {
   color-scheme: light dark;
 
-  --olive-1: light-dark(#fcfdfc, #111210);
-  --olive-2: light-dark(#f8faf8, #181917);
-  --olive-3: light-dark(#eff1ef, #212220);
-  --olive-4: light-dark(#e7e9e7, #282a27);
-  --olive-5: light-dark(#dfe2df, #2f312e);
-  --olive-6: light-dark(#d7dad7, #383a36);
-  --olive-7: light-dark(#cccfcc, #454843);
-  --olive-8: light-dark(#b9bcb8, #5c625b);
-  --olive-9: light-dark(#898e87, #687066);
-  --olive-10: light-dark(#7f847d, #767d74);
-  --olive-11: light-dark(#60655f, #afb5ad);
-  --olive-12: light-dark(#1d211c, #eceeec);
-
-  --grass-1: light-dark(#fbfefb, #0e1511);
-  --grass-2: light-dark(#f5fbf5, #141a15);
-  --grass-3: light-dark(#e9f6e9, #1b2a1e);
-  --grass-4: light-dark(#daf1db, #1d3a24);
-  --grass-5: light-dark(#c9e8ca, #25482d);
-  --grass-6: light-dark(#b2ddb5, #2d5736);
-  --grass-7: light-dark(#94ce9a, #366740);
-  --grass-8: light-dark(#65ba74, #3e7949);
-  --grass-9: light-dark(#46a758, #46a758);
-  --grass-10: light-dark(#3e9b4f, #53b365);
-  --grass-11: light-dark(#2a7e3b, #71d083);
-  --grass-12: light-dark(#203c25, #c2f0c2);
-
   --font-sans: system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-
   --content-width: calc(65ch + 2 * var(--space-s));
 
+  /* Radix Colors */
+  /* https://www.radix-ui.com/colors/docs/palette-composition/scales */
+  --gray-1: light-dark(#fcfcfc, #111111);
+  --gray-2: light-dark(#f9f9f9, #191919);
+  --gray-3: light-dark(#f0f0f0, #222222);
+  --gray-4: light-dark(#e8e8e8, #2a2a2a);
+  --gray-5: light-dark(#e0e0e0, #313131);
+  --gray-6: light-dark(#d9d9d9, #3a3a3a);
+  --gray-7: light-dark(#cecece, #484848);
+  --gray-8: light-dark(#bbbbbb, #606060);
+  --gray-9: light-dark(#8d8d8d, #6e6e6e);
+  --gray-10: light-dark(#838383, #7b7b7b);
+  --gray-11: light-dark(#646464, #b4b4b4);
+  --gray-12: light-dark(#202020, #eeeeee);
+
+  --green-1: light-dark(#fbfefc, #0e1512);
+  --green-2: light-dark(#f4fbf6, #121b17);
+  --green-3: light-dark(#e6f6eb, #132d21);
+  --green-4: light-dark(#d6f1df, #113b29);
+  --green-5: light-dark(#c4e8d1, #174933);
+  --green-6: light-dark(#adddc0, #20573e);
+  --green-7: light-dark(#8eceaa, #28684a);
+  --green-8: light-dark(#5bb98b, #2f7c57);
+  --green-9: light-dark(#30a46c, #30a46c);
+  --green-10: light-dark(#2b9a66, #33b074);
+  --green-11: light-dark(#218358, #3dd68c);
+  --green-12: light-dark(#193b2d, #b1f1cb);
+
   /* Utopia fluid type scale */
+  /* https://utopia.fyi/type/calculator?c=320,16,1.2,1240,18,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
   /* Min Viewport -> 320px 16px 1.2 */
   /* Max Viewport -> 1240px 18px 1.25 */
   --step--2: clamp(0.6944rem, 0.6856rem + 0.0444vw, 0.72rem);
@@ -46,6 +47,7 @@
   --step-5: clamp(2.4883rem, 2.1597rem + 1.6433vw, 3.4332rem);
 
   /* Utopia fluid space */
+  /* https://utopia.fyi/space/calculator?c=320,16,1.2,1240,18,1.25,5,2,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C6,s-l&g=s,l,xl,12 */
   /* Min Viewport -> 320px 16px */
   /* Max Viewport -> 1240px 18px */
   --space-3xs: clamp(0.25rem, 0.2283rem + 0.1087vw, 0.3125rem);
