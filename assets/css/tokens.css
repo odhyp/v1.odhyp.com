@@ -1,32 +1,32 @@
-/* tokens: Radix sage and teal, sRGB, light-dark() pairs (ADR-0001) */
+/* tokens: Radix olive and grass, sRGB, light-dark() pairs (ADR-0001) */
 :root {
   color-scheme: light dark;
 
-  --sage-1: light-dark(#fbfdfc, #101211);
-  --sage-2: light-dark(#f7f9f8, #171918);
-  --sage-3: light-dark(#eef1f0, #202221);
-  --sage-4: light-dark(#e6e9e8, #272a29);
-  --sage-5: light-dark(#dfe2e0, #2e3130);
-  --sage-6: light-dark(#d7dad9, #373b39);
-  --sage-7: light-dark(#cbcfcd, #444947);
-  --sage-8: light-dark(#b8bcba, #5b625f);
-  --sage-9: light-dark(#868e8b, #63706b);
-  --sage-10: light-dark(#7c8481, #717d79);
-  --sage-11: light-dark(#5f6563, #adb5b2);
-  --sage-12: light-dark(#1a211e, #eceeed);
+  --olive-1: light-dark(#fcfdfc, #111210);
+  --olive-2: light-dark(#f8faf8, #181917);
+  --olive-3: light-dark(#eff1ef, #212220);
+  --olive-4: light-dark(#e7e9e7, #282a27);
+  --olive-5: light-dark(#dfe2df, #2f312e);
+  --olive-6: light-dark(#d7dad7, #383a36);
+  --olive-7: light-dark(#cccfcc, #454843);
+  --olive-8: light-dark(#b9bcb8, #5c625b);
+  --olive-9: light-dark(#898e87, #687066);
+  --olive-10: light-dark(#7f847d, #767d74);
+  --olive-11: light-dark(#60655f, #afb5ad);
+  --olive-12: light-dark(#1d211c, #eceeec);
 
-  --teal-1: light-dark(#fafefd, #0d1514);
-  --teal-2: light-dark(#f3fbf9, #111c1b);
-  --teal-3: light-dark(#e0f8f3, #0d2d2a);
-  --teal-4: light-dark(#ccf3ea, #023b37);
-  --teal-5: light-dark(#b8eae0, #084843);
-  --teal-6: light-dark(#a1ded2, #145750);
-  --teal-7: light-dark(#83cdc1, #1c6961);
-  --teal-8: light-dark(#53b9ab, #207e73);
-  --teal-9: light-dark(#12a594, #12a594);
-  --teal-10: light-dark(#0d9b8a, #0eb39e);
-  --teal-11: light-dark(#008573, #0bd8b6);
-  --teal-12: light-dark(#0d3d38, #adf0dd);
+  --grass-1: light-dark(#fbfefb, #0e1511);
+  --grass-2: light-dark(#f5fbf5, #141a15);
+  --grass-3: light-dark(#e9f6e9, #1b2a1e);
+  --grass-4: light-dark(#daf1db, #1d3a24);
+  --grass-5: light-dark(#c9e8ca, #25482d);
+  --grass-6: light-dark(#b2ddb5, #2d5736);
+  --grass-7: light-dark(#94ce9a, #366740);
+  --grass-8: light-dark(#65ba74, #3e7949);
+  --grass-9: light-dark(#46a758, #46a758);
+  --grass-10: light-dark(#3e9b4f, #53b365);
+  --grass-11: light-dark(#2a7e3b, #71d083);
+  --grass-12: light-dark(#203c25, #c2f0c2);
 
   --font-sans: system-ui, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;

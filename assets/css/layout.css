@@ -9,7 +9,7 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid var(--teal-11);
+  outline: 2px solid var(--grass-11);
   outline-offset: 2px;
 }
 
@@ -28,7 +28,7 @@ body > header {
 
 body > header > a {
   font-weight: 600;
-  color: var(--sage-12);
+  color: var(--olive-12);
   text-decoration: none;
 }
 
@@ -48,13 +48,13 @@ footer li + li {
 }
 
 nav a {
-  color: var(--sage-11);
+  color: var(--olive-11);
   text-decoration: none;
 }
 
 nav a:hover,
 nav a[aria-current="page"] {
-  color: var(--teal-11);
+  color: var(--grass-11);
 }
 
 main {
@@ -67,9 +67,9 @@ body > footer {
   justify-content: space-between;
   gap: var(--space-2xs) var(--space-s);
   padding-block: var(--space-m);
-  border-block-start: 1px solid var(--sage-6);
+  border-block-start: 1px solid var(--olive-6);
   font-size: var(--step--1);
-  color: var(--sage-11);
+  color: var(--olive-11);
 }
 
 form[role="search"] {
@@ -79,10 +79,10 @@ form[role="search"] {
 
 input[type="search"] {
   padding: var(--space-2xs);
-  border: 1px solid var(--sage-7);
+  border: 1px solid var(--olive-7);
   border-radius: 4px;
   color: inherit;
-  background: var(--sage-2);
+  background: var(--olive-2);
 }
 
 #results {

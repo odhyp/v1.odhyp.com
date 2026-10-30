@@ -2,7 +2,7 @@
 #TableOfContents {
   margin-block: var(--space-m);
   padding-inline-start: var(--space-s);
-  border-inline-start: 2px solid var(--sage-6);
+  border-inline-start: 2px solid var(--olive-6);
 }
 
 #TableOfContents ul {
@@ -11,7 +11,7 @@
 
 article blockquote {
   padding-inline-start: var(--space-s);
-  border-inline-start: 2px solid var(--sage-6);
+  border-inline-start: 2px solid var(--olive-6);
   font-style: italic;
 }
 
@@ -46,12 +46,12 @@ article table {
 
 article :is(th, td) {
   padding: var(--space-2xs) var(--space-s);
-  border-block-end: 1px solid var(--sage-6);
+  border-block-end: 1px solid var(--olive-6);
   text-align: start;
 }
 
 article th {
-  border-block-end-color: var(--sage-8);
+  border-block-end-color: var(--olive-8);
 }
 
 /* task lists: the checkbox replaces the bullet */
