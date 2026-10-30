@@ -1,28 +1,88 @@
 /* content */
 #TableOfContents {
-  margin-block: 1.5rem;
-  padding-inline-start: 1rem;
+  margin-block: var(--space-m);
+  padding-inline-start: var(--space-s);
   border-inline-start: 2px solid var(--sage-6);
 }
 
 #TableOfContents ul {
-  padding-inline-start: 1rem;
+  padding-inline-start: var(--space-s);
 }
 
 article blockquote {
-  padding-inline-start: 1rem;
+  padding-inline-start: var(--space-s);
   border-inline-start: 2px solid var(--sage-6);
   font-style: italic;
 }
 
+/* blockquote isn't a flow container, so space its children here */
+article blockquote > * + * {
+  margin-block-start: var(--space-s);
+}
+
 article pre {
-  padding: 1rem;
+  padding: var(--space-s);
   overflow-x: auto;
   border-radius: 4px;
+  line-height: 1.5;
+}
+
+article :is(h2, h3, h4) + * {
+  margin-block-start: var(--space-2xs);
+}
+
+article hr {
+  margin-block: var(--space-l);
+}
+
+/* tables scroll on narrow screens instead of overflowing the page */
+article table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: var(--step--1);
+}
+
+article :is(th, td) {
+  padding: var(--space-2xs) var(--space-s);
+  border-block-end: 1px solid var(--sage-6);
+  text-align: start;
+}
+
+article th {
+  border-block-end-color: var(--sage-8);
+}
+
+/* task lists: the checkbox replaces the bullet */
+article li:has(> input[type="checkbox"]) {
+  list-style: none;
+}
+
+article li > input[type="checkbox"] {
+  margin-inline: calc(-1 * var(--space-m)) var(--space-2xs);
+}
+
+/* the reset strips the default dd indent */
+article dt {
+  font-weight: 600;
+}
+
+article dt:not(:first-child) {
+  margin-block-start: var(--space-s);
+}
+
+article dd {
+  margin-inline-start: var(--space-m);
+}
+
+/* keep footnote refs from stretching their line */
+article sup {
+  line-height: 0;
 }
 
 article :is(h2, h3, h4, h5, h6) {
-  scroll-margin-top: 1rem;
+  scroll-margin-top: var(--space-s);
 }
 
 .anchor {

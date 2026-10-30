@@ -1,6 +1,11 @@
-@import "reset.css";
-@import "tokens.css";
-@import "typography.css";
-@import "base.css";
-@import "content.css";
-@import "chroma.css";
+/* Layer order sets precedence: later layers win regardless of selector specificity. */
+@layer reset, tokens, base, layout, components, utilities;
+
+@import "reset.css" layer(reset);
+@import "tokens.css" layer(tokens);
+@import "typography.css" layer(base);
+
+@import "layout.css" layer(layout);
+
+@import "content.css" layer(components);
+@import "chroma.css" layer(components);
