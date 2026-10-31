@@ -32,28 +32,19 @@ description = ""
 
 [params.author]
 name = "Odhy Pradhana"
+email = "hi@odhyp.com"
 
-# url is the fallback until the pageRef page exists
 [[menus.main]]
 name = "Writings"
 pageRef = "/writings"
-url = "/writings/"
 weight = 10
-
-[[menus.main]]
-name = "Projects"
-pageRef = "/projects"
-url = "/projects/"
-weight = 20
 
 [[menus.main]]
 name = "Now"
 pageRef = "/now"
-url = "/now/"
-weight = 30
+weight = 20
 
 [[menus.main]]
 name = "About"
 pageRef = "/about"
-url = "/about/"
-weight = 40
+weight = 30
