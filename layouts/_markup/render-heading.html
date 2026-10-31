@@ -1,4 +1,3 @@
 <h{{ .Level }} id="{{ .Anchor }}" {{- with .Attributes.class }} class="{{ . }}"{{ end }}>
-  {{- .Text }}
-  <a class="anchor" href="#{{ .Anchor }}" aria-label="Link to this section">#</a>
-</h{{ .Level }}>
+  {{- /* a link in the heading text would nest inside this one, so keep headings link-free */ -}}
+  <a href="#{{ .Anchor }}">{{ .Text }}</a></h{{ .Level }}>
