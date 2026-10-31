@@ -11,6 +11,10 @@
 {{ with .OutputFormats.Get "rss" }}
   {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
 {{ end }}
+{{/* only the faces every page renders; the rest load on demand via fonts.css */}}
+{{ range slice "inter-latin-400-normal" "lora-latin-500-normal" }}
+  <link rel="preload" href="/fonts/{{ . }}.woff2" as="font" type="font/woff2" crossorigin />
+{{ end }}
 {{ with resources.Get "css/main.css" }}
   {{ $opts := dict "minify" true "externals" (slice "/fonts/*") }}
   {{ with . | css.Build $opts }}
