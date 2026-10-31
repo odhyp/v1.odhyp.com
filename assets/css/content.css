@@ -93,6 +93,11 @@ article dd {
   margin-inline-start: var(--space-m);
 }
 
+/* the footnotes h2 is its div's first child, so `* + h2` misses it; space the div like an h2 */
+article .footnotes {
+  margin-block-start: var(--space-l);
+}
+
 /* keep footnote refs from stretching their line */
 article sup {
   line-height: 0;

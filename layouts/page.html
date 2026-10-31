@@ -5,7 +5,8 @@
     {{ partial "updated.html" . }}
     {{ partial "topics.html" . }}
     {{ if .Params.toc }}{{ .TableOfContents }}{{ end }}
-    {{ .Content }}
+    {{- /* Goldmark has no footnote render hook, so swap its <hr> for a heading styled like render-heading.html */}}
+    {{ replace .Content "<div class=\"footnotes\" role=\"doc-endnotes\">\n<hr>" "<div class=\"footnotes\" role=\"doc-endnotes\">\n<h2 id=\"footnotes\"><a href=\"#footnotes\">Footnotes</a></h2>" | safeHTML }}
     {{ if eq .Section "writings" }}{{ partial "reply.html" . }}{{ end }}
   </article>
 {{ end }}
