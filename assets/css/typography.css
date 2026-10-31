@@ -1,10 +1,20 @@
-/* typography */
+/* TYPOGRAPHY
+/*
+/* 1. Only use font weight 400 and 500
+/* 2. Use opacity system
+/*    - 100% for heading, anchor, bold
+/*    - 80% for body
+/*    - 60% for muted text
+/* 3. OS default font first
+/*
+*/
+
 body {
   font-family: var(--font-sans);
   font-size: var(--step-0);
   line-height: 1.6;
-  color: var(--olive-12);
-  background: var(--olive-1);
+  color: var(--gray-12);
+  background: var(--gray-1);
   -webkit-text-size-adjust: 100%;
   overflow-wrap: break-word;
 }
@@ -17,6 +27,12 @@ h5,
 h6 {
   line-height: 1.25;
   text-wrap: balance;
+  font-weight: 500;
+}
+
+b,
+strong,
+th {
   font-weight: 500;
 }
 
@@ -65,13 +81,18 @@ li + li {
   margin-block-start: var(--space-3xs);
 }
 
+ol li::marker,
+ul li::marker {
+  color: var(--gray-7);
+}
+
 a {
-  color: var(--grass-11);
+  color: var(--green-11);
   text-underline-offset: 0.15em;
 }
 
 a:hover {
-  color: var(--grass-12);
+  color: var(--green-12);
 }
 
 code,
@@ -85,15 +106,15 @@ pre {
 kbd {
   padding: 0.1em 0.3em;
   border-radius: 4px;
-  background: var(--olive-3);
+  background: var(--gray-3);
 }
 
 time,
 small {
-  color: var(--olive-11);
+  color: var(--gray-11);
 }
 
 hr {
   border: 0;
-  border-block-start: 1px solid var(--olive-6);
+  border-block-start: 1px solid var(--gray-6);
 }

@@ -2,7 +2,7 @@
 #TableOfContents {
   margin-block: var(--space-m);
   padding-inline-start: var(--space-s);
-  border-inline-start: 2px solid var(--olive-6);
+  border-inline-start: 2px solid var(--gray-6);
 }
 
 #TableOfContents ul {
@@ -11,7 +11,7 @@
 
 article blockquote {
   padding-inline-start: var(--space-s);
-  border-inline-start: 2px solid var(--olive-6);
+  border-inline-start: 2px solid var(--gray-6);
   font-style: italic;
 }
 
@@ -31,13 +31,18 @@ article pre {
 article pre,
 article .chroma {
   color-scheme: dark;
-  color: var(--olive-12);
-  background-color: var(--olive-2);
+  color: var(--gray-12);
+  background-color: var(--gray-2);
 }
 
 /* Monokai's comment colour fails contrast on this background */
 article .chroma :is(.c, .ch, .cm, .c1, .cs, .cp, .cpf) {
-  color: var(--olive-11);
+  color: var(--gray-11);
+}
+
+/* chroma's GenericStrong is bold; the site uses only 400 and 500 */
+article .chroma .gs {
+  font-weight: 500;
 }
 
 article :is(h2, h3, h4) + * {
@@ -59,12 +64,12 @@ article table {
 
 article :is(th, td) {
   padding: var(--space-2xs) var(--space-s);
-  border-block-end: 1px solid var(--olive-6);
+  border-block-end: 1px solid var(--gray-6);
   text-align: start;
 }
 
 article th {
-  border-block-end-color: var(--olive-8);
+  border-block-end-color: var(--gray-8);
 }
 
 /* task lists: the checkbox replaces the bullet */
@@ -78,7 +83,7 @@ article li > input[type="checkbox"] {
 
 /* the reset strips the default dd indent */
 article dt {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 article dt:not(:first-child) {
@@ -98,13 +103,12 @@ article :is(h2, h3, h4, h5, h6) {
   scroll-margin-top: var(--space-s);
 }
 
-.anchor {
-  margin-inline-start: 0.25em;
+/* headings link to themselves but read as headings; underline on hover hints at the link */
+article :is(h2, h3, h4, h5, h6) > a {
+  color: inherit;
   text-decoration: none;
-  opacity: 0;
 }
 
-:is(h2, h3, h4, h5, h6):hover .anchor,
-.anchor:focus-visible {
-  opacity: 0.6;
+article :is(h2, h3, h4, h5, h6) > a:hover {
+  text-decoration: underline;
 }

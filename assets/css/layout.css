@@ -1,15 +1,21 @@
-/* base */
+/* LAYOUT */
+html {
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+}
+
 body {
   max-width: var(--content-width);
   margin-inline: auto;
   padding-inline: var(--space-s);
   display: flex;
   flex-direction: column;
+  row-gap: var(--space-l);
   min-height: 100svh;
 }
 
 :focus-visible {
-  outline: 2px solid var(--grass-11);
+  outline: 2px solid var(--green-11);
   outline-offset: 2px;
 }
 
@@ -22,39 +28,42 @@ body > header {
   flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
-  gap: var(--space-2xs) var(--space-s);
+  gap: var(--space-2xs) var(--space-xl);
   padding-block: var(--space-m);
 }
 
 body > header > a {
-  font-weight: 600;
-  color: var(--olive-12);
+  color: var(--gray-12);
   text-decoration: none;
 }
 
-nav ul,
+body > header > a:hover {
+  color: var(--green-11);
+}
+
+/* header nav only: Hugo's ToC is also a <nav> and needs plain nested lists */
+header nav ul,
 footer ul {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-3xs) var(--space-s);
+  gap: var(--space-3xs) var(--space-m);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-nav li + li,
+header nav li + li,
 footer li + li {
   margin: 0;
 }
 
-nav a {
-  color: var(--olive-11);
+header nav a {
+  color: var(--gray-11);
   text-decoration: none;
 }
 
-nav a:hover,
-nav a[aria-current="page"] {
-  color: var(--grass-11);
+header nav a:hover {
+  color: var(--green-11);
 }
 
 main {
@@ -65,11 +74,11 @@ body > footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: var(--space-2xs) var(--space-s);
+  gap: var(--space-2xs) var(--space-l);
   padding-block: var(--space-m);
-  border-block-start: 1px solid var(--olive-6);
+  border-block-start: 1px solid var(--gray-4);
   font-size: var(--step--1);
-  color: var(--olive-11);
+  color: var(--gray-11);
 }
 
 form[role="search"] {
@@ -79,10 +88,10 @@ form[role="search"] {
 
 input[type="search"] {
   padding: var(--space-2xs);
-  border: 1px solid var(--olive-7);
+  border: 1px solid var(--gray-9);
   border-radius: 4px;
   color: inherit;
-  background: var(--olive-2);
+  background: var(--gray-3);
 }
 
 #results {
