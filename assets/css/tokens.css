@@ -5,7 +5,7 @@
   --font-serif: "Lora", Georgia, serif;
   --font-mono:
     "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  --content-width: calc(60ch + 2 * var(--space-s));
+  --content-width: calc(55ch + 2 * var(--space-s));
 
   /* Flexoki palette */
   /* https://github.com/kepano/flexoki/blob/main/css/flexoki.css */
