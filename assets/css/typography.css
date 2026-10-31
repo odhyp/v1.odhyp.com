@@ -14,6 +14,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: var(--font-serif);
   line-height: 1.25;
   text-wrap: balance;
   font-weight: 500;
@@ -37,12 +38,6 @@ h2 {
 
 h3 {
   font-size: var(--step-1);
-}
-
-h4,
-h5,
-h6 {
-  font-size: var(--step-0);
 }
 
 h4,

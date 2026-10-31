@@ -12,7 +12,7 @@
   {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
 {{ end }}
 {{ with resources.Get "css/main.css" }}
-  {{ $opts := dict "minify" true }}
+  {{ $opts := dict "minify" true "externals" (slice "/fonts/*") }}
   {{ with . | css.Build $opts }}
     {{ if hugo.IsDevelopment }}
       <link rel="stylesheet" href="{{ .RelPermalink }}" />

@@ -1,9 +1,11 @@
 :root {
   color-scheme: light dark;
 
-  --font-sans: system-ui, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  --content-width: calc(65ch + 2 * var(--space-s));
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-serif: "Lora", Georgia, serif;
+  --font-mono:
+    "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --content-width: calc(60ch + 2 * var(--space-s));
 
   /* Flexoki palette */
   /* https://github.com/kepano/flexoki/blob/main/css/flexoki.css */

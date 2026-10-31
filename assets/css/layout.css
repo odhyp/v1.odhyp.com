@@ -28,12 +28,14 @@ body > header {
   align-items: baseline;
   justify-content: space-between;
   gap: var(--space-2xs) var(--space-xl);
-  padding-block: var(--space-m);
+  padding-block: var(--space-l);
 }
 
 body > header > a {
   color: var(--color-tx);
   text-decoration: none;
+  font-weight: 500;
+  font-size: var(--step--1);
 }
 
 body > header > a:hover {
@@ -49,6 +51,7 @@ footer ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  font-size: var(--step--1);
 }
 
 header nav li + li,
