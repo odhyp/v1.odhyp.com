@@ -32,13 +32,10 @@ h1 {
   letter-spacing: -0.02em;
 }
 
-h2 {
-  font-size: var(--step-1);
-  letter-spacing: -0.01em;
-}
-
+h2,
 h3 {
   font-size: var(--step-1);
+  letter-spacing: -0.01em;
 }
 
 h4,
