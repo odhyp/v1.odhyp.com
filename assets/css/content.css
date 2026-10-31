@@ -1,8 +1,7 @@
-/* content */
 #TableOfContents {
   margin-block: var(--space-m);
   padding-inline-start: var(--space-s);
-  border-inline-start: 2px solid var(--gray-6);
+  border-inline-start: 2px solid var(--color-ui-2);
 }
 
 #TableOfContents ul {
@@ -11,7 +10,7 @@
 
 article blockquote {
   padding-inline-start: var(--space-s);
-  border-inline-start: 2px solid var(--gray-6);
+  border-inline-start: 2px solid var(--color-ui-2);
   font-style: italic;
 }
 
@@ -31,13 +30,13 @@ article pre {
 article pre,
 article .chroma {
   color-scheme: dark;
-  color: var(--gray-12);
-  background-color: var(--gray-2);
+  color: var(--color-tx);
+  background-color: var(--color-bg-2);
 }
 
 /* Monokai's comment colour fails contrast on this background */
 article .chroma :is(.c, .ch, .cm, .c1, .cs, .cp, .cpf) {
-  color: var(--gray-11);
+  color: var(--color-tx-2);
 }
 
 /* chroma's GenericStrong is bold; the site uses only 400 and 500 */
@@ -64,12 +63,12 @@ article table {
 
 article :is(th, td) {
   padding: var(--space-2xs) var(--space-s);
-  border-block-end: 1px solid var(--gray-6);
+  border-block-end: 1px solid var(--color-ui-2);
   text-align: start;
 }
 
 article th {
-  border-block-end-color: var(--gray-8);
+  border-block-end-color: var(--color-ui-3);
 }
 
 /* task lists: the checkbox replaces the bullet */
