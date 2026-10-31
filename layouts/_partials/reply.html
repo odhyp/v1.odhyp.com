@@ -1,0 +1,8 @@
+{{- /* html/template percent-encodes the subject in the href */ -}}
+{{ with site.Params.author.email }}
+  <p>
+    <a href="mailto:{{ . }}?subject={{ printf "Re: %s" $.Title }}"
+      >Reply by email</a
+    >
+  </p>
+{{ end }}

@@ -6,5 +6,6 @@
     {{ partial "topics.html" . }}
     {{ if .Params.toc }}{{ .TableOfContents }}{{ end }}
     {{ .Content }}
+    {{ if eq .Section "writings" }}{{ partial "reply.html" . }}{{ end }}
   </article>
 {{ end }}
