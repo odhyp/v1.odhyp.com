@@ -4,7 +4,7 @@ title = "A Calm Palette"
 topics = ["css", "design"]
 +++
 
-The colors come from Radix's olive and grass scales. Olive covers text, backgrounds and borders, and grass appears only on links, hover and focus.
+The colors come from Radix's gray and green scales. Gray covers text, backgrounds and borders, and green appears only on links, hover and focus.
 
 Each color is one `light-dark()` pair, so the whole theme switches with the operating system and needs no toggle.
 
