@@ -114,5 +114,5 @@ article :is(h2, h3, h4, h5, h6) > a {
 }
 
 article :is(h2, h3, h4, h5, h6) > a:hover {
-  text-decoration: underline;
+  text-decoration: underline solid var(--color-tx-2);
 }
