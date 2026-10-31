@@ -253,15 +253,15 @@ test("only the topics taxonomy exists", () => {
     assert.ok(!existsSync(join(out, dir)), dir);
 });
 
-test("headings have ids and self-link anchors", () => {
+test("headings have ids and link to themselves", () => {
   const html = page("writings/alpha/index.html");
   assert.match(
     html,
-    /<h2 id="?first-section"?>First Section\s*<a [^>]*href="?#first-section"?/,
+    /<h2 id="?first-section"?><a href="?#first-section"?>First Section<\/a><\/h2>/,
   );
   assert.match(
     html,
-    /<h3 id="?sub-section"?>Sub Section\s*<a [^>]*href="?#sub-section"?/,
+    /<h3 id="?sub-section"?><a href="?#sub-section"?>Sub Section<\/a><\/h3>/,
   );
 });
 
@@ -301,6 +301,14 @@ test("a missing image fails the build", () => {
   } finally {
     rmSync(dest, { recursive: true, force: true });
   }
+});
+
+test("only Writings have a reply-by-email link with the title as subject", () => {
+  assert.match(
+    page("writings/alpha/index.html"),
+    /<a href="?mailto:hi@odhyp\.com\?subject=Re%3a%20Alpha"?>Reply by email<\/a>/i,
+  );
+  assert.doesNotMatch(page("now/index.html"), /mailto:/);
 });
 
 test("Projects, Now and About render their content at root URLs", () => {
